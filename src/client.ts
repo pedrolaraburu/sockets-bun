@@ -9,13 +9,13 @@ const rl = readline.createInterface({
 });
 
 const client = Bun.connect({
-  hostname: "localhost",
-  port: 3000,
+  hostname: "0.tcp.sa.ngrok.io",
+  port: 16296,
   socket: {
-    open(s) {
+    async open(s) {
       socket = s;
       console.log("Conectado ao servidor\n");
-
+      await Bun.sleep(1500);
       rl.question("Insira seu nickname: ", (name) => {
         socket.write(name + "\n"); 
         promptMessage(socket); 
@@ -35,8 +35,9 @@ const client = Bun.connect({
   },
 });
 
-function promptMessage(socket: Socket) {
-  rl.question("Insira sua mensagem", (message) => {
+async function promptMessage(socket: Socket) {
+  await Bun.sleep(500);
+  rl.question("Insira sua mensagem: ", (message) => {
     if (message.toLowerCase() === "exit") {
       console.log("Fechando conexão...");
       socket.end();
