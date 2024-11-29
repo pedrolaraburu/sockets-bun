@@ -144,5 +144,13 @@ Veja abaixo como o ngrok deve aparecer:
   - O servidor retransmite as mensagens para todos os outros clientes conectados.
 - **Broadcast pelo Servidor**:
   - As mensagens são replicadas em tempo real para todos os clientes.
+- **Vídeo demonstrativo**
+  - O vídeo abaixo demonstra a visão do servidor, onde é possível visualizar todas as mensagens de todos os clientes passando.
+  - Os clientes também recebem as mensagens de outros clientes, visto que o servidor faz o broadcast dessa mensagem aos outros.
+  - *Os clientes que acessaram esse servidor se **conectaram por máquinas e redes diferentes***.
 
 ---
+<video width="600" controls>
+  <source src="./docs/video-sockets.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>

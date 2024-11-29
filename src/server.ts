@@ -6,7 +6,7 @@ const server = Bun.listen({
   socket: {
     open(socket) {
       console.log("Novo client conectou-se");
-      socket.write("Bem-vindo ao servidor! Por favor, insira seu nome:\n");
+      socket.write("Bem-vindo ao servidor!\n");
     },
     data(socket, data) {
       const message = data.toString().trim();
